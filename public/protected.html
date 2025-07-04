@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Protected | SecureAuth</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <img src="logo.png" alt="SecureAuth Logo" style="width:80px; margin-bottom: 15px;">
+    <h2>Protected Dashboard</h2>
+    <p id="secureMessage">Verifying token...</p>
+    <a href="logout.html">Logout</a>
+  </div>
+  <script>
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+      alert("Unauthorized. Please login.");
+      window.location.href = "index.html";
+    } else {
+      fetch("https://your-backend.onrender.com/api/protected", {
+        headers: {
+          Authorization: token
+        }
+      })
+      .then(res => res.text())
+      .then(data => {
+        document.getElementById("secureMessage").textContent = data;
+      })
+      .catch(() => {
+        document.getElementById("secureMessage").textContent = "Access denied or server error.";
+      });
+    }
+  </script>
+</body>
+</html>

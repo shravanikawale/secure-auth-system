@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Logout | SecureAuth</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="form-container">
+    <img src="logo.png" alt="SecureAuth Logo" style="width:80px; margin-bottom: 15px;">
+    <h2>You've been logged out</h2>
+    <p>Thank you for using SecureAuth. For better security, please close your browser tab.</p>
+    <a href="index.html">Login Again</a>
+  </div>
+  <script>
+    localStorage.removeItem("authToken");
+  </script>
+</body>
+</html>
