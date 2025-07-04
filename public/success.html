@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Login Success | SecureAuth</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    .success-container {
+      background-color: #fff;
+      padding: 40px;
+      border-radius: 16px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+    }
+
+    .success-container h1 {
+      color: #4CAF50;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .success-container p {
+      font-size: 1.1rem;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    .success-container a {
+      display: inline-block;
+      padding: 12px 25px;
+      background-color: #4CAF50;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .success-container a:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <div class="success-container">
+    <h1>Login Successful!</h1>
+    <p>Welcome to the secure area of the app.</p>
+    <a href="landing.html">Return to Home</a>
+  </div>
+
+  <script>
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+      alert("Unauthorized. Please login.");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
