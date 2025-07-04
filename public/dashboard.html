@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dashboard | SecureAuth</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="form-container">
+    <img src="logo.png" alt="SecureAuth Logo" style="width:80px; margin-bottom: 15px;">
+    <h2>Welcome to Your Secure Dashboard</h2>
+    <p>This page contains user-specific secure content such as access to protected data, settings, and logout functionality.</p>
+
+    <div style="text-align: left; margin-top: 20px;">
+      <h3>🔐 Features Available</h3>
+      <ul>
+        <li>✅ View protected server-side data</li>
+        <li>✅ Navigate to token-verified routes</li>
+        <li>✅ Logout securely</li>
+        <li>✅ Mobile responsive and styled UI</li>
+      </ul>
+
+      <h3>📊 Upcoming Enhancements</h3>
+      <ul>
+        <li>- User Profile & Edit Page</li>
+        <li>- Session Expiry Notification</li>
+        <li>- Role-based Access (Admin/User)</li>
+      </ul>
+    </div>
+
+    <div style="margin-top: 30px;">
+      <a href="protected.html">🔐 Access Protected Page</a> | 
+      <a href="logout.html">🚪 Logout</a>
+    </div>
+  </div>
+  <script>
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+      alert("Unauthorized access. Please login again.");
+      window.location.href = "index.html";
+    }
+  </script>
+</body>
+</html>
